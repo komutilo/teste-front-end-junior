@@ -7,20 +7,24 @@ Uma página simples com um campo de busca que consulta uma API, essa consulta de
 ---
 
 ### API
-A API que deve ser integrada é uma API de GraphQL para buscar artistas do Spotify e está no seguinte endpoint:  
+A API é pública e deve ser consultada pela sua página usando fetch ou a biblioteca de requisão que se sentir mais confortável. Ela é uma API de GraphQL para buscar artistas do Spotify e está no seguinte endpoint:  
 https://spotify-graphql-server.herokuapp.com/graphql  
 
-Query de exemplo:  
-```gql
-query {
-  queryArtists(byName: "Michael Jackson") {
-    name
-    image
-  }
+_Caso GraphQL seja algo completamente novo para você, segue alguns artigos que podem ajudar:  
+O que é GraphQL - https://imasters.com.br/back-end/graphql-poder-ao-front-end  
+Exemplo de chamada em React (inglês) - https://www.freecodecamp.org/news/5-ways-to-fetch-data-react-graphql/#5-react-query-fetch-api_
+
+Corpo da requisição de exemplo contendo a query de GraphQL:
+```json
+{
+  "query": "query {
+    queryArtists(byName: \"Michael Jackson\") {
+      name
+      image
+    }
+  }"
 }
 ```
-
-_Caso GraphQL seja algo completamente novo para você, segue um artigo curto e objetivo sobre o assunto: https://imasters.com.br/back-end/graphql-poder-ao-front-end_
 
 ---
 
